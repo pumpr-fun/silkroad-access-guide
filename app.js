@@ -70,6 +70,32 @@ document.querySelectorAll(".copy-route").forEach((button) => {
   button.addEventListener("click", (event) => copyOnion(event.currentTarget));
 });
 
+const proxyFrame = document.querySelector("#proxy-frame");
+const proxyPlaceholder = document.querySelector("#proxy-placeholder");
+const loadProxy = document.querySelector("#load-proxy");
+const stopProxy = document.querySelector("#stop-proxy");
+
+loadProxy.addEventListener("click", () => {
+  proxyFrame.src = proxyFrame.dataset.src;
+  proxyPlaceholder.hidden = true;
+  proxyFrame.classList.add("loaded");
+  loadProxy.disabled = true;
+  loadProxy.textContent = "PREVIEW LOADING...";
+  stopProxy.disabled = false;
+  setTimeout(() => {
+    loadProxy.textContent = "PREVIEW ACTIVE";
+  }, 1800);
+});
+
+stopProxy.addEventListener("click", () => {
+  proxyFrame.src = "about:blank";
+  proxyFrame.classList.remove("loaded");
+  proxyPlaceholder.hidden = false;
+  loadProxy.disabled = false;
+  loadProxy.textContent = "LOAD SANDBOXED PREVIEW";
+  stopProxy.disabled = true;
+});
+
 document.querySelector("#verify-address").addEventListener("click", () => {
   const input = document.querySelector("#address-input");
   const result = document.querySelector("#verification-result");
