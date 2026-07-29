@@ -66,6 +66,9 @@ async function copyOnion(button) {
 
 document.querySelector("#copy-onion").addEventListener("click", (event) => copyOnion(event.currentTarget));
 document.querySelector("#copy-onion-bottom").addEventListener("click", (event) => copyOnion(event.currentTarget));
+document.querySelectorAll(".copy-route").forEach((button) => {
+  button.addEventListener("click", (event) => copyOnion(event.currentTarget));
+});
 
 document.querySelector("#verify-address").addEventListener("click", () => {
   const input = document.querySelector("#address-input");

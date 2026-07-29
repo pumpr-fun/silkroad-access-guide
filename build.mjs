@@ -7,4 +7,5 @@ for (const file of ["index.html", "styles.css", "app.js", "robots.txt", "vercel.
   cpSync(file, `${output}/${file}`);
 }
 if (existsSync("og.png")) cpSync("og.png", `${output}/og.png`);
+if (existsSync("assets")) cpSync("assets", `${output}/assets`, { recursive: true });
 console.log("Built static access guide in dist/");

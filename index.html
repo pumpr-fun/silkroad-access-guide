@@ -18,7 +18,7 @@
 
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Silk Road access guide home">
-        <span class="brand-mark">SR</span>
+        <img class="brand-logo" src="/assets/silk-road-logo.png" alt="" />
         <span><strong>SILK ROAD</strong><small>VERIFIED ACCESS</small></span>
       </a>
       <nav aria-label="Primary navigation">
@@ -27,18 +27,20 @@
         <a href="#security">Security</a>
         <a href="#roadmap">Roadmap</a>
       </nav>
+      <span class="header-principles">ROUTE VERIFIED&nbsp;&nbsp; FAIR ACCESS&nbsp;&nbsp; ◆ SHARED PROSPERITY</span>
       <span class="route-status"><i></i> ROUTE ONLINE</span>
     </header>
 
     <main id="main">
       <section class="hero" id="top">
         <div class="hero-copy">
+          <div class="terminal-kicker"><span>SILK ROAD ECOSYSTEM</span><span>ACCESS NODE 01</span></div>
           <p class="eyebrow">PUBLIC GATEWAY // ONION SERVICE DIRECTORY</p>
-          <h1>Take the verified<br /><span>route into Tor.</span></h1>
-          <p class="lede">A clear, cautious path from the regular web to the private service. Download Tor Browser from its official source, verify the full address, and connect without a proxy gateway.</p>
+          <h1>Market and<br /><span>route access.</span></h1>
+          <p class="lede">The public route into the Silk Road ecosystem. Install Tor Browser, verify the full v3 address, and enter the private market through an end-to-end onion circuit.</p>
           <div class="hero-actions">
-            <a class="button primary" href="https://www.torproject.org/download/" target="_blank" rel="noopener noreferrer">Download Tor Browser <span>↗</span></a>
-            <a class="button secondary" href="#connect">View the 4-step route</a>
+            <a class="button primary onion-launch" href="http://silkrdo2o63ljm5geo2vpiraycqyj575ifmwsxrbbsezncltfzcqfdyd.onion/" target="_blank" rel="noopener noreferrer">OPEN SILK ROAD IN TOR <span>↗</span></a>
+            <a class="button secondary" href="https://www.torproject.org/download/" target="_blank" rel="noopener noreferrer">GET TOR BROWSER</a>
           </div>
           <div class="trust-row" aria-label="Key access properties">
             <span>56-character v3 address</span>
@@ -48,14 +50,45 @@
         </div>
         <aside class="route-card" aria-label="Verified onion address">
           <div class="card-topline"><span>DESTINATION</span><span class="live-dot">VERIFIED</span></div>
-          <div class="onion-emblem" aria-hidden="true">
-            <span class="ring ring-one"></span><span class="ring ring-two"></span><span class="core">.onion</span>
+          <div class="logo-stage">
+            <img src="/assets/silk-road-logo.png" alt="Silk Road — Open Routes. Fair Access. Shared Prosperity." />
           </div>
           <p class="label">OFFICIAL V3 ONION ADDRESS</p>
           <code id="onion-address">silkrdo2o63ljm5geo2vpiraycqyj575ifmwsxrbbsezncltfzcqfdyd.onion</code>
           <button class="copy-button" id="copy-onion" type="button">COPY VERIFIED ADDRESS</button>
           <p class="microcopy">Compare every character before signing in. A one-character difference means a different destination.</p>
         </aside>
+      </section>
+
+      <section class="route-launcher" id="launch">
+        <div class="launcher-title">
+          <span class="launcher-index">ROUTE // 00</span>
+          <div><p class="eyebrow">TOR HANDOFF CONSOLE</p><h2>Launch the private route.</h2></div>
+        </div>
+        <div class="launcher-grid">
+          <article class="launch-cell active">
+            <span class="cell-status">TOR BROWSER READY</span>
+            <h3>Direct onion launch</h3>
+            <p>If you are reading this page inside Tor Browser, this button opens the verified onion service directly.</p>
+            <a class="button primary onion-launch" href="http://silkrdo2o63ljm5geo2vpiraycqyj575ifmwsxrbbsezncltfzcqfdyd.onion/" target="_blank" rel="noopener noreferrer">OPEN PRIVATE MARKET ↗</a>
+          </article>
+          <article class="launch-cell">
+            <span class="cell-status amber">REGULAR BROWSER</span>
+            <h3>Install, copy, switch</h3>
+            <p>Regular Chrome, Edge, Safari, and Firefox tabs cannot create a Tor circuit. Install Tor Browser, then paste the verified address.</p>
+            <div class="launch-actions">
+              <a class="button secondary" href="https://www.torproject.org/download/" target="_blank" rel="noopener noreferrer">DOWNLOAD TOR ↗</a>
+              <button class="button secondary copy-route" type="button">COPY ADDRESS</button>
+            </div>
+          </article>
+          <article class="launch-cell integration">
+            <span class="cell-status">AUTO-DISCOVERY</span>
+            <h3>Onion-Location enabled</h3>
+            <p>This public domain publishes the official <code>Onion-Location</code> header. Tor Browser can show an “.onion available” prompt and switch routes.</p>
+            <div class="integration-line"><i></i><span>PUBLIC GUIDE</span><b>→</b><span>VERIFIED ONION</span></div>
+          </article>
+        </div>
+        <div class="proxy-warning"><strong>WHY NO EMBEDDED PROXY?</strong><span>A public proxy would see or alter traffic and is not equivalent to Tor Browser. This gateway never relays credentials or marketplace pages.</span></div>
       </section>
 
       <section class="signal-strip" aria-label="Access status">
@@ -68,7 +101,7 @@
       <section class="section" id="connect">
         <div class="section-heading">
           <p class="eyebrow">ROUTE 01 // TOR BROWSER</p>
-          <h2>Connect in four deliberate steps.</h2>
+          <h2>Tor Browser connection protocol.</h2>
           <p>The safest supported route is Tor Browser. Choose your device for exact setup instructions.</p>
         </div>
 
@@ -177,11 +210,12 @@
 
       <section class="final-cta">
         <p class="eyebrow">DESTINATION READY</p>
+        <img class="footer-logo" src="/assets/silk-road-logo.png" alt="" />
         <h2>Copy the route. Open Tor Browser. Verify twice.</h2>
         <code>silkrdo2o63ljm5geo2vpiraycqyj575ifmwsxrbbsezncltfzcqfdyd.onion</code>
         <div class="hero-actions">
-          <button class="button primary" id="copy-onion-bottom" type="button">Copy onion address</button>
-          <a class="button secondary" href="https://www.torproject.org/download/" target="_blank" rel="noopener noreferrer">Get Tor Browser ↗</a>
+          <a class="button primary onion-launch" href="http://silkrdo2o63ljm5geo2vpiraycqyj575ifmwsxrbbsezncltfzcqfdyd.onion/" target="_blank" rel="noopener noreferrer">Open in Tor Browser ↗</a>
+          <button class="button secondary" id="copy-onion-bottom" type="button">Copy onion address</button>
         </div>
       </section>
     </main>
