@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Official access guide for reaching the Silk Road onion service safely with Tor Browser." />
+    <meta property="og:title" content="Silk Road — Verified Access Guide" />
+    <meta property="og:description" content="Install Tor Browser, verify the onion address, connect safely, and follow the route roadmap." />
+    <meta property="og:image" content="/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Silk Road — Verified Access Guide</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to access guide</a>
+    <div class="grid-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Silk Road access guide home">
+        <span class="brand-mark">SR</span>
+        <span><strong>SILK ROAD</strong><small>VERIFIED ACCESS</small></span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#connect">Connect</a>
+        <a href="#alternatives">Browser options</a>
+        <a href="#security">Security</a>
+        <a href="#roadmap">Roadmap</a>
+      </nav>
+      <span class="route-status"><i></i> ROUTE ONLINE</span>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">PUBLIC GATEWAY // ONION SERVICE DIRECTORY</p>
+          <h1>Take the verified<br /><span>route into Tor.</span></h1>
+          <p class="lede">A clear, cautious path from the regular web to the private service. Download Tor Browser from its official source, verify the full address, and connect without a proxy gateway.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://www.torproject.org/download/" target="_blank" rel="noopener noreferrer">Download Tor Browser <span>↗</span></a>
+            <a class="button secondary" href="#connect">View the 4-step route</a>
+          </div>
+          <div class="trust-row" aria-label="Key access properties">
+            <span>56-character v3 address</span>
+            <span>End-to-end onion routing</span>
+            <span>No clearnet proxy required</span>
+          </div>
+        </div>
+        <aside class="route-card" aria-label="Verified onion address">
+          <div class="card-topline"><span>DESTINATION</span><span class="live-dot">VERIFIED</span></div>
+          <div class="onion-emblem" aria-hidden="true">
+            <span class="ring ring-one"></span><span class="ring ring-two"></span><span class="core">.onion</span>
+          </div>
+          <p class="label">OFFICIAL V3 ONION ADDRESS</p>
+          <code id="onion-address">silkrdo2o63ljm5geo2vpiraycqyj575ifmwsxrbbsezncltfzcqfdyd.onion</code>
+          <button class="copy-button" id="copy-onion" type="button">COPY VERIFIED ADDRESS</button>
+          <p class="microcopy">Compare every character before signing in. A one-character difference means a different destination.</p>
+        </aside>
+      </section>
+
+      <section class="signal-strip" aria-label="Access status">
+        <div><span>01</span><strong>DOWNLOAD</strong><small>Official Tor Project</small></div>
+        <div><span>02</span><strong>CONNECT</strong><small>Tor network circuit</small></div>
+        <div><span>03</span><strong>VERIFY</strong><small>Full v3 address</small></div>
+        <div><span>04</span><strong>ENTER</strong><small>Onion service</small></div>
+      </section>
+
+      <section class="section" id="connect">
+        <div class="section-heading">
+          <p class="eyebrow">ROUTE 01 // TOR BROWSER</p>
+          <h2>Connect in four deliberate steps.</h2>
+          <p>The safest supported route is Tor Browser. Choose your device for exact setup instructions.</p>
+        </div>
+
+        <div class="platform-tabs" role="tablist" aria-label="Choose operating system">
+          <button role="tab" aria-selected="true" data-platform="windows">Windows</button>
+          <button role="tab" aria-selected="false" data-platform="macos">macOS</button>
+          <button role="tab" aria-selected="false" data-platform="linux">Linux</button>
+          <button role="tab" aria-selected="false" data-platform="android">Android</button>
+          <button role="tab" aria-selected="false" data-platform="ios">iPhone / iPad</button>
+        </div>
+
+        <div class="steps" id="platform-steps" aria-live="polite"></div>
+
+        <div class="address-check">
+          <div>
+            <p class="label">BEFORE YOU CONNECT</p>
+            <h3>Verify the destination locally.</h3>
+            <p>Paste an address below. This check runs only in your browser and sends nothing anywhere.</p>
+          </div>
+          <div class="checker">
+            <label for="address-input">Onion address</label>
+            <div class="checker-row">
+              <input id="address-input" autocomplete="off" spellcheck="false" placeholder="Paste the full .onion address" />
+              <button type="button" id="verify-address">VERIFY</button>
+            </div>
+            <p id="verification-result" class="verification-result">Waiting for an address.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split-section" id="alternatives">
+        <div class="section-heading sticky-heading">
+          <p class="eyebrow">ROUTE 02 // OTHER OPTIONS</p>
+          <h2>Can Tor run inside this website?</h2>
+          <p>Not safely. Vercel and ordinary browsers use the public internet; JavaScript cannot create a Tor circuit or resolve an onion address. The private site also cannot be framed here because the guide blocks frames and the onion service is a separate security origin.</p>
+        </div>
+        <div class="option-stack">
+          <article class="option-card recommended">
+            <div class="option-head"><span class="badge">RECOMMENDED</span><span>01</span></div>
+            <h3>Tor Browser</h3>
+            <p>Purpose-built Tor routing plus anti-fingerprinting protections. Use this for desktop and Android access.</p>
+            <a href="https://www.torproject.org/download/" target="_blank" rel="noopener noreferrer">Official download ↗</a>
+          </article>
+          <article class="option-card caution">
+            <div class="option-head"><span class="badge">LIMITED</span><span>02</span></div>
+            <h3>Onion Browser on iOS</h3>
+            <p>Tor Project recommends Onion Browser for iOS, but Apple’s WebKit requirement means it cannot provide the same protections as Tor Browser.</p>
+            <a href="https://support.torproject.org/tor-browser/getting-started/installing/" target="_blank" rel="noopener noreferrer">Read the official note ↗</a>
+          </article>
+          <article class="option-card danger">
+            <div class="option-head"><span class="badge">NOT RECOMMENDED</span><span>03</span></div>
+            <h3>Proxy sites and extensions</h3>
+            <p>A gateway or browser extension may see the destination, alter pages, weaken isolation, or expose activity outside Tor Browser. This guide does not embed or endorse one.</p>
+            <div class="plain-note">If an extension promises “Tor in any tab,” treat it as a different trust model—not equivalent protection.</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="security">
+        <div class="section-heading">
+          <p class="eyebrow">ROUTE 03 // SECURITY CHECK</p>
+          <h2>Know what Tor protects—and what it does not.</h2>
+        </div>
+        <div class="security-grid">
+          <article><span>01</span><h3>Verify all 56 characters</h3><p>Modern v3 onion addresses contain 56 letters and numbers before <code>.onion</code>. Short 16-character v2 addresses no longer work.</p></article>
+          <article><span>02</span><h3>Use the onion icon</h3><p>Tor Browser shows an onion indicator in the address bar when the connection is using an onion service.</p></article>
+          <article><span>03</span><h3>Keep Tor Browser updated</h3><p>Install updates promptly and download installers only from Tor Project or its documented official distribution routes.</p></article>
+          <article><span>04</span><h3>Avoid extra extensions</h3><p>Add-ons can change the browser fingerprint or observe activity. Keep the browser close to its default configuration.</p></article>
+          <article><span>05</span><h3>Separate identities</h3><p>Tor cannot undo personal details you voluntarily share. Do not mix accounts or identifying information across contexts.</p></article>
+          <article><span>06</span><h3>Use bridges when blocked</h3><p>In Tor Browser, open Settings → Connection → Bridges. Request a bridge or select a built-in transport such as Snowflake.</p></article>
+        </div>
+        <div class="source-bar">
+          <span>PRIMARY SOURCES</span>
+          <a href="https://support.torproject.org/tor-browser/getting-started/installing/" target="_blank" rel="noopener noreferrer">Installation ↗</a>
+          <a href="https://support.torproject.org/tor-browser/features/onion-services/" target="_blank" rel="noopener noreferrer">Onion services ↗</a>
+          <a href="https://support.torproject.org/tor-browser/getting-started/verifying-tor-browser/" target="_blank" rel="noopener noreferrer">Signature verification ↗</a>
+          <a href="https://tb-manual.torproject.org/bridges/" target="_blank" rel="noopener noreferrer">Bridges ↗</a>
+        </div>
+      </section>
+
+      <section class="section" id="troubleshoot">
+        <div class="section-heading">
+          <p class="eyebrow">ROUTE 04 // TROUBLESHOOTING</p>
+          <h2>If the route does not open.</h2>
+        </div>
+        <div class="faq-list">
+          <details><summary>Tor Browser says the onion site cannot be found.</summary><p>First compare the entire address with the verified address on this page. If it matches, wait a few minutes and retry; the onion service or its host may temporarily be offline.</p></details>
+          <details><summary>Tor does not connect on my network.</summary><p>Select “Configure Connection,” then enable a bridge. Tor Project documents built-in transports and bridge requests for networks that block Tor.</p></details>
+          <details><summary>The address opens in Chrome or another regular browser.</summary><p>A normal browser does not natively resolve onion services. If a third party opens it, that party is acting as a gateway. Close it and use Tor Browser for the intended privacy model.</p></details>
+          <details><summary>The page looks different from the one I used before.</summary><p>Stop and re-check the address. Do not enter credentials until the exact v3 address matches. Interface changes alone are not proof of authenticity.</p></details>
+        </div>
+      </section>
+
+      <section class="section roadmap-section" id="roadmap">
+        <div class="section-heading">
+          <p class="eyebrow">NETWORK ROADMAP // 2026+</p>
+          <h2>Build the route in public. Protect the destination.</h2>
+        </div>
+        <div class="roadmap">
+          <article class="complete"><span>PHASE 01</span><h3>Verified access foundation</h3><ul><li>Public access guide</li><li>Official v3 onion directory</li><li>Tor Browser device instructions</li><li>Local address verification</li></ul></article>
+          <article class="active"><span>PHASE 02</span><h3>Resilient access</h3><ul><li>Onion-Location header on public domain</li><li>Signed address announcement</li><li>Service-status reporting</li><li>Bridge and censorship help</li></ul></article>
+          <article><span>PHASE 03</span><h3>Trust and transparency</h3><ul><li>Reproducible guide releases</li><li>Public change log</li><li>Security contact and disclosure policy</li><li>Independent configuration review</li></ul></article>
+          <article><span>PHASE 04</span><h3>Route ecosystem</h3><ul><li>Multilingual access instructions</li><li>Accessibility audit</li><li>Signed desktop shortcut package</li><li>Community-maintained help center</li></ul></article>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <p class="eyebrow">DESTINATION READY</p>
+        <h2>Copy the route. Open Tor Browser. Verify twice.</h2>
+        <code>silkrdo2o63ljm5geo2vpiraycqyj575ifmwsxrbbsezncltfzcqfdyd.onion</code>
+        <div class="hero-actions">
+          <button class="button primary" id="copy-onion-bottom" type="button">Copy onion address</button>
+          <a class="button secondary" href="https://www.torproject.org/download/" target="_blank" rel="noopener noreferrer">Get Tor Browser ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div><strong>SILK ROAD</strong><span>VERIFIED ACCESS GUIDE</span></div>
+      <p>This public guide does not proxy, frame, or relay the private service. Use Tor responsibly and follow applicable law.</p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
