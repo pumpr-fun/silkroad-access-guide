@@ -91,41 +91,6 @@
         <div class="proxy-warning"><strong>WHY NO EMBEDDED PROXY?</strong><span>A public proxy would see or alter traffic and is not equivalent to Tor Browser. This gateway never relays credentials or marketplace pages.</span></div>
       </section>
 
-      <section class="proxy-lab" id="proxy-lab">
-        <div class="proxy-lab-head">
-          <div>
-            <p class="eyebrow">EXPERIMENTAL ROUTE // THIRD-PARTY TOR2WEB</p>
-            <h2>Read-only onion.city preview</h2>
-          </div>
-          <span class="experimental-badge">UNVERIFIED GATEWAY</span>
-        </div>
-        <div class="proxy-disclosure">
-          <strong>PRIVACY BOUNDARY</strong>
-          <p>onion.city is a third-party intermediary, not Tor Browser and not operated by Silk Road. It can observe requested pages and may modify responses. Never sign in, register, message, upload, or pay through this preview.</p>
-        </div>
-        <div class="proxy-controls">
-          <button class="button primary" type="button" id="load-proxy">LOAD SANDBOXED PREVIEW</button>
-          <button class="button secondary" type="button" id="stop-proxy" disabled>STOP PREVIEW</button>
-          <a class="button secondary onion-launch" href="http://silkrdo2o63ljm5geo2vpiraycqyj575ifmwsxrbbsezncltfzcqfdyd.onion/" target="_blank" rel="noopener noreferrer">USE VERIFIED TOR ROUTE ↗</a>
-        </div>
-        <div class="proxy-frame-shell" id="proxy-frame-shell">
-          <div class="proxy-placeholder" id="proxy-placeholder">
-            <span>PROXY INACTIVE</span>
-            <p>The external gateway is not contacted until you load the preview.</p>
-          </div>
-          <iframe
-            id="proxy-frame"
-            title="Experimental read-only onion.city preview"
-            data-src="https://silkrdo2o63ljm5geo2vpiraycqyj575ifmwsxrbbsezncltfzcqfdyd.onion.city/"
-            src="about:blank"
-            sandbox="allow-scripts allow-same-origin"
-            referrerpolicy="no-referrer"
-            credentialless
-          ></iframe>
-        </div>
-        <p class="proxy-footnote">Sandbox policy intentionally excludes forms, downloads, popups, top-level navigation, camera, microphone, location, and payment permissions. Some gateway or marketplace features will therefore not work—and must be completed in Tor Browser.</p>
-      </section>
-
       <section class="signal-strip" aria-label="Access status">
         <div><span>01</span><strong>DOWNLOAD</strong><small>Official Tor Project</small></div>
         <div><span>02</span><strong>CONNECT</strong><small>Tor network circuit</small></div>
@@ -189,7 +154,7 @@
           <article class="option-card danger">
             <div class="option-head"><span class="badge">NOT RECOMMENDED</span><span>03</span></div>
             <h3>Proxy sites and extensions</h3>
-            <p>A gateway or browser extension may see the destination, alter pages, weaken isolation, or expose activity outside Tor Browser. The experimental onion.city lab above is sandboxed and read-only, but still carries this risk.</p>
+            <p>A gateway or browser extension may see the destination, alter pages, weaken isolation, or expose activity outside Tor Browser. This guide does not embed or endorse one.</p>
             <div class="plain-note">If an extension promises “Tor in any tab,” treat it as a different trust model—not equivalent protection.</div>
           </article>
         </div>
