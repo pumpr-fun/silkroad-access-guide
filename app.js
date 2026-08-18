@@ -80,3 +80,17 @@ document.querySelector("#verify-address").addEventListener("click", () => {
     : "NO MATCH — Do not sign in. Copy the verified address from this page.";
   result.className = `verification-result ${matches ? "success" : "error"}`;
 });
+
+const phantomGate = document.querySelector("#phantom-gate");
+const phantomQr = document.querySelector("#phantom-qr");
+const phantomUrl = `https://phantom.app/ul/browse/${encodeURIComponent(`${location.origin}/phantom.html`)}?ref=${encodeURIComponent(location.origin)}`;
+function openPhantomQr() {
+  phantomGate.hidden = false;
+  phantomQr.replaceChildren();
+  new QRCode(phantomQr, { text: phantomUrl, width: 240, height: 240, colorDark: "#1a1307", colorLight: "#f4e7c3", correctLevel: QRCode.CorrectLevel.M });
+  document.querySelector("#open-phantom-mobile").href = phantomUrl;
+}
+document.querySelector("#open-phantom-qr").addEventListener("click", openPhantomQr);
+document.querySelector("#open-phantom-qr-bottom").addEventListener("click", openPhantomQr);
+document.querySelector("#close-phantom-qr").addEventListener("click", () => { phantomGate.hidden = true; });
+phantomGate.addEventListener("click", (event) => { if (event.target === phantomGate) phantomGate.hidden = true; });
