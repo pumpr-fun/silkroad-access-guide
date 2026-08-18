@@ -82,15 +82,53 @@ document.querySelector("#verify-address").addEventListener("click", () => {
 });
 
 const phantomGate = document.querySelector("#phantom-gate");
-const phantomQr = document.querySelector("#phantom-qr");
-const phantomUrl = `https://phantom.app/ul/browse/${encodeURIComponent(`${location.origin}/phantom.html`)}?ref=${encodeURIComponent(location.origin)}`;
-function openPhantomQr() {
-  phantomGate.hidden = false;
-  phantomQr.replaceChildren();
-  new QRCode(phantomQr, { text: phantomUrl, width: 240, height: 240, colorDark: "#1a1307", colorLight: "#f4e7c3", correctLevel: QRCode.CorrectLevel.M });
-  document.querySelector("#open-phantom-mobile").href = phantomUrl;
+const phantomStatus = document.querySelector("#phantom-status");
+const desktopConnect = document.querySelector("#connect-phantom-desktop");
+
+function phantomProvider() {
+  const provider = window.phantom?.solana || window.solana;
+  return provider?.isPhantom ? provider : null;
 }
-document.querySelector("#open-phantom-qr").addEventListener("click", openPhantomQr);
-document.querySelector("#open-phantom-qr-bottom").addEventListener("click", openPhantomQr);
-document.querySelector("#close-phantom-qr").addEventListener("click", () => { phantomGate.hidden = true; });
-phantomGate.addEventListener("click", (event) => { if (event.target === phantomGate) phantomGate.hidden = true; });
+
+function showPhantomGate() {
+  phantomGate.hidden = false;
+  phantomStatus.textContent = "PHANTOM HAS NOT BEEN CONNECTED";
+  phantomStatus.classList.remove("connected");
+  desktopConnect.textContent = "CONNECT PHANTOM EXTENSION";
+}
+
+function closePhantomGate() {
+  phantomGate.hidden = true;
+}
+
+async function connectPhantomDesktop() {
+  const provider = phantomProvider();
+  if (!provider) {
+    phantomStatus.textContent = "PHANTOM EXTENSION NOT DETECTED — INSTALL IT, THEN RELOAD THIS PAGE";
+    phantomStatus.classList.remove("connected");
+    return;
+  }
+  desktopConnect.disabled = true;
+  desktopConnect.textContent = "REQUESTING CONNECTION…";
+  try {
+    const result = await provider.connect();
+    const address = result?.publicKey?.toString?.() || provider.publicKey?.toString?.();
+    if (!address) throw new Error("Phantom did not return a Solana public address.");
+    phantomStatus.textContent = `CONNECTED LOCALLY · ${address}`;
+    phantomStatus.classList.add("connected");
+    desktopConnect.textContent = "PHANTOM CONNECTED";
+  } catch (error) {
+    const rejected = Number(error?.code) === 4001 || /reject/i.test(String(error?.message || ""));
+    phantomStatus.textContent = rejected ? "CONNECTION WAS NOT APPROVED" : `CONNECTION FAILED · ${error?.message || "TRY AGAIN"}`;
+    phantomStatus.classList.remove("connected");
+    desktopConnect.textContent = "CONNECT PHANTOM EXTENSION";
+  } finally {
+    desktopConnect.disabled = false;
+  }
+}
+
+document.querySelector("#open-phantom-desktop").addEventListener("click", showPhantomGate);
+document.querySelector("#open-phantom-desktop-bottom").addEventListener("click", showPhantomGate);
+document.querySelector("#close-phantom-desktop").addEventListener("click", closePhantomGate);
+desktopConnect.addEventListener("click", connectPhantomDesktop);
+phantomGate.addEventListener("click", (event) => { if (event.target === phantomGate) closePhantomGate(); });

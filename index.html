@@ -10,7 +10,6 @@
     <meta name="twitter:card" content="summary_large_image" />
     <title>Silk Road — Verified Access Guide</title>
     <link rel="stylesheet" href="/styles.css" />
-    <script src="/assets/qrcode.min.js" defer></script>
     <script src="/app.js" defer></script>
   </head>
   <body>
@@ -57,20 +56,21 @@
           <p class="label">OFFICIAL V3 ONION ADDRESS</p>
           <code id="onion-address">silkrdo2o63ljm5geo2vpiraycqyj575ifmwsxrbbsezncltfzcqfdyd.onion</code>
           <button class="copy-button" id="copy-onion" type="button">COPY VERIFIED ADDRESS</button>
-          <button class="copy-button phantom-button" id="open-phantom-qr" type="button">CONNECT PHANTOM BY QR</button>
+          <button class="copy-button phantom-button" id="open-phantom-desktop" type="button">CONNECT PHANTOM (OPTIONAL)</button>
           <p class="microcopy">Compare every character before signing in. A one-character difference means a different destination.</p>
         </aside>
       </section>
 
       <section class="phantom-gate" id="phantom-gate" hidden aria-labelledby="phantom-title">
         <div class="phantom-card" role="dialog" aria-modal="true" aria-labelledby="phantom-title">
-          <button class="phantom-close" id="close-phantom-qr" type="button" aria-label="Close Phantom QR">×</button>
-          <p class="eyebrow">SOLANA WALLET // PHANTOM MOBILE</p>
-          <h2 id="phantom-title">Carry the route into Phantom.</h2>
-          <p>Scan this code using Phantom. It opens this verified guide in Phantom’s in-app browser, where you can connect your Solana wallet without sharing a seed phrase or private key.</p>
-          <div id="phantom-qr" class="phantom-qr" aria-label="Phantom mobile connection QR code"></div>
-          <a id="open-phantom-mobile" class="button primary" href="#">OPEN PHANTOM ON THIS DEVICE</a>
-          <p class="microcopy">This QR opens the HTTPS companion site in Phantom. It does not make a Tor connection or relay wallet secrets through this public guide.</p>
+          <button class="phantom-close" id="close-phantom-desktop" type="button" aria-label="Close Phantom connection">×</button>
+          <p class="eyebrow">OPTIONAL DESKTOP WALLET CONNECTION</p>
+          <h2 id="phantom-title">Connect Phantom on this device.</h2>
+          <p>Use the official Phantom browser extension to expose your public Solana address to this guide. No seed phrase, private key, transaction, or signature is requested.</p>
+          <div class="phantom-status" id="phantom-status" role="status" aria-live="polite">PHANTOM HAS NOT BEEN CONNECTED</div>
+          <button class="button primary" id="connect-phantom-desktop" type="button">CONNECT PHANTOM EXTENSION</button>
+          <a class="button secondary phantom-install" href="https://phantom.com/download" target="_blank" rel="noopener noreferrer">GET PHANTOM</a>
+          <p class="microcopy">Optional only: this public guide does not create an Onion-marketplace session or send your wallet address anywhere.</p>
         </div>
       </section>
 
@@ -230,7 +230,7 @@
         <div class="hero-actions">
           <a class="button primary onion-launch" href="http://silkrdo2o63ljm5geo2vpiraycqyj575ifmwsxrbbsezncltfzcqfdyd.onion/" target="_blank" rel="noopener noreferrer">Open in Tor Browser ↗</a>
           <button class="button secondary" id="copy-onion-bottom" type="button">Copy onion address</button>
-          <button class="button secondary" id="open-phantom-qr-bottom" type="button">Connect Phantom by QR</button>
+          <button class="button secondary" id="open-phantom-desktop-bottom" type="button">Connect Phantom (optional)</button>
         </div>
       </section>
     </main>
